@@ -271,23 +271,101 @@ print(math.pi)
 #help(str)
 
 #使用者的全名
-name = "高浩瑜的python code 練習"
-#幾個字元
-length= len(name)
-print(f"你的全名共有{length}個字元")
+# name = "高浩瑜的python code 練習"
+# #幾個字元
+# length= len(name)
+# print(f"你的全名共有{length}個字元")
 
-#找到第一個空格
-space_pos= name.find(" ")
-print(f"第一個空格出現在{space_pos}位")
+# #找到第一個空格
+# space_pos= name.find(" ")
+# print(f"第一個空格出現在{space_pos}位")
 
-#讓第一個字大寫
-name2 = "python Code"
-name2_capitalized = name2.capitalize()
-print(name2_capitalized)
+# #讓第一個字大寫
+# name2 = "python Code"
+# name2_capitalized = name2.capitalize()
+# print(name2_capitalized)
 
-#全部大寫
-name2_upper=name2.upper()
-print(name2_upper)
-#全部小寫
-name2_lower=name2.lower()
-print(name2_lower)
+# #全部大寫
+# name2_upper=name2.upper()
+# print(name2_upper)
+# #全部小寫
+# name2_lower=name2.lower()
+# print(name2_lower)
+
+# #count
+# phone_number = input("請輸入電話號碼")
+# dash_count=phone_number.count("-")
+# print(f"電話號碼中有{dash_count}個 - ")
+
+# #replace
+# phone_number2= phone_number.replace("-","")
+# print(f"電話號碼新格式為{phone_number2}")
+
+#程式練習:驗證使用者輸入合法性
+#-使用者名稱不得超過12字元
+#-使用者名稱不得包含空格
+#-使用者名稱不得包含數字
+#-如果都符合，顯示 【歡迎+使用者名稱】
+
+# username= input("請輸入你的使用者名稱:")
+
+# if len(username)>12:
+#     print("使用者名稱不得超過12字元")
+# elif username.count(" ")>0:
+#     print("使用者名稱不得包含空格")
+# elif not username.isalpha():
+#     print("使用者名稱包含數字")
+# else:
+#     print(f"【歡迎{username}】")
+
+
+#字串索引
+#用其得知字串中的序列，首位是0
+credit_number="1234-5678-9876-5432"
+
+first_char=credit_number[0]
+print(f"第一個字元{first_char}")
+
+second_char=credit_number[1]
+print(f"第一個字元{second_char}")
+
+first_four_num= credit_number[0:4]  #這裡要注意會列出0-3個字
+print(f"前四個數字是{first_four_num}")
+
+last_one=credit_number[-1]   #輸入零會回傳第0個=>1
+print(f"最後一個字元是{last_one}")
+
+last_tow=credit_number[-2]
+print(f"最後第二位是{last_tow}")
+
+#Email 字串分析
+email="qaz011119@gmail.com"
+index_At=email.index("@")
+print("@在第",index_At)
+print("email使用者為",email[:index_At])
+print("email網域為",email[index_At+1:])
+
+#f-string 的字串格式化
+price_1=3.321
+price_2=-77
+price_3=15.11
+
+#增加小數點精確度
+print(f"價格1為{price_1:.2f}\n"
+      f"價格2為{price_2:.1f}\n"
+      f"價格3為{price_3:.2f}")
+
+#增加正負號
+print(f"價格1為{price_1:+.2f}\n"
+      f"價格2為{price_2:+.1f}\n"
+      f"價格3為{price_3:+.2f}")
+
+#對齊<>^
+print(f"價格1為{price_1:>10.2f}\n"
+      f"價格2為{price_2:<10.1f}\n"
+      f"價格3為{price_3:^10.2f}")  #位數會定為10位
+
+#使用不同符號
+print(f"價格1為{price_1:>+10.2f}\n"
+      f"價格2為{price_2:<+10.1f}\n"
+      f"價格3為{price_3:^-10.2f}")  #位數會定為10位
