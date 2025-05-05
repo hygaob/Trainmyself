@@ -194,3 +194,59 @@
 
 # custom_dict = defaultdict(custom_default)
 # print(custom_dict['新鍵'])  # 輸出: 自定義默認值
+#List練習
+# arr=list()
+# arr=[1,2,3]
+# print(arr[0])
+# print(arr[0]+arr[1]+arr[2])
+# arr.append(9)
+# print(arr)
+# arr.extend([10,11,12])
+# print(arr)
+# arr.insert(3,7)
+# print(arr)
+# arr.remove(10)
+# print(arr)
+# temp=arr.pop()
+# print(temp)
+# print(arr)
+# temp=arr.index(3)
+# print(temp)
+# temp=arr.count(3)
+# print(temp)
+# arr.reverse()
+# print(arr)
+# arr.sort()
+# print(arr)
+#list命令題
+# if __name__ == '__main__':
+#     N = int(input()) # number of commands
+#     mylist=[]
+#     for i in range(N):
+#         cmd=input().strip().split() #command
+#         if cmd[0]=="insert":
+#             mylist.insert(int(cmd[1]),int(cmd[2]))
+#         elif cmd[0]=="print":
+#             print(mylist)
+#         elif cmd[0]=="remove":
+#             mylist.remove(int(cmd[1]))
+#         elif cmd[0]=="append":
+#             mylist.append(int(cmd[1]))
+#         elif cmd[0]=="sort":
+#             mylist.sort()
+#         elif cmd[0]=="pop":
+#             mylist.pop()
+#         elif cmd[0]=="reverse":
+#             mylist.reverse()
+#         elif cmd[0]=="end":
+#             break
+#鍵值對練習
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    print(format(sum(student_marks[query_name])/3, ".2f"))
