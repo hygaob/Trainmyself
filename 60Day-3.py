@@ -369,3 +369,103 @@ print(f"價格1為{price_1:>10.2f}\n"
 print(f"價格1為{price_1:>+10.2f}\n"
       f"價格2為{price_2:<+10.1f}\n"
       f"價格3為{price_3:^-10.2f}")  #位數會定為10位
+
+
+#python 中的while迴圈
+
+# name= input("請輸入你的名稱:")
+# if name=="":
+#     print("你沒有輸入名稱")
+# else:
+#     print(f"你好 {name} ")
+
+
+# while name=="":
+#     name=input("請輸入名稱")
+
+# print(f"你好 {name} ")
+
+# #簡化此邏輯 改為
+# name2=""
+# while name2=="":
+#     name2=input("請輸入名稱")
+
+# print(f"你好 {name2}")
+
+# food = input("請輸入你喜歡吃的食物:")
+# while food != "q":
+#     print(f"你喜歡吃{food}")
+#     food = input("請輸入你喜歡吃的食物:")
+# print("bye")
+
+# #範例3
+# num = int(input("請輸入1到10之間的數字:"))
+# while num <1 or num >10:
+#       print(f"你輸入的數字{num}是無效的")
+#       num = int(input("請輸入1到10之間的數字:"))
+# print(f"你輸入了{num}")
+
+#複利計算機
+#總金額=本金*(1+(利率/100))**時間
+
+# amount = 0
+# while amount<=0:
+#     amount = float(input("請輸入本金金額:"))
+#     if amount <= 0:
+#         print("本金金額不能小於或等於零")
+# print("本金是",amount)
+
+# rate = 0
+# while rate <=0:
+#     rate =float(input("請輸入利率:"))
+#     if rate <=0:
+#         print("利率不能小於或等於0")
+# print(f"利率:{rate}")
+
+# time = 0
+# while time <=0:
+#     time = float(input("請輸入幾年:"))
+#     if time <=0:
+#         print("年數不能小於或等於0")
+# print(f"年:{time}")
+
+# print(f"最後總金額{amount*(1+(rate/100))**time:.3f}")
+
+#For迴圈
+for x in range(1,11):
+    print(x)
+
+for x in reversed(range(1,11)):
+    print(x)
+print("Happy new year")
+
+credit_card = "1231-4645-9314-5599"
+for x in credit_card:
+    if x=="9":
+        #continue  #會跳過
+        break      #會跳出
+    else:
+        print(x)
+
+#字典 dictionary
+#鍵Key:值:value
+my_dict = {"a":1,"b":2,"c":3}
+for key, value in my_dict.items():
+    print("key:",key)
+    print("value:",value)
+
+#巢狀迴圈
+for x in range(1,10):
+    for y in range(1,5):
+            print(x,end=" ")
+    print()
+
+rows = int(input("請輸入行數:"))
+cols = int(input("請輸入列數:"))
+symbol = input("請輸入符號:")
+
+for i in range(rows):
+     for j in range(cols):
+          print(symbol, end=" ")
+     print()
+    
