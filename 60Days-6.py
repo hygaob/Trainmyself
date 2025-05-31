@@ -133,3 +133,5 @@ print(dice)
 for i in dice:
     get_dict_number(i)
 print(f"總和{sum(dice)}")
+
+
