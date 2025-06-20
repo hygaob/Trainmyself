@@ -19,9 +19,8 @@ print(sunnuy_weather)
 
 cities_in_F={'LA':80,'New York':65,'Chicago':50,"Miami":90}
 
-
 def check_temp(value):
-    if value >=70:
+    if value >=70: 
         return  "熱"
     elif 40<= value:
         return "溫暖"
