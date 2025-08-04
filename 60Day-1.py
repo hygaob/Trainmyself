@@ -21,6 +21,7 @@ int_age=int(str_age)
 float_age=float(str_age)
 #轉換為布林值
 bool_age=bool(str_age)
+str_age2=str(bool_age)
 
 print(f"原始字串為:{str_age} , 類型為{type(str_age)}")
 print(f"字串轉換為整數:{int_age} , 類型為{type(int_age)}")
