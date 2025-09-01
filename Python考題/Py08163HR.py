@@ -298,3 +298,123 @@ chen.set_grade("數學",55)
 chen.set_grade("英文",95)
 
 chen.print_grades()
+
+#繼承
+
+#想創建人類及貓，都會呼吸吃飯，但人類會閱讀，貓咪不會，貓咪會在人類閱讀時抓沙發
+
+#不需要在兩個類中分別撰寫屬性
+
+#只需要使用繼承
+
+#定義一個父類:哺乳類
+class Mammal:
+    def __init__(self,name,sex):
+        self.name=name
+        self.sex=sex
+        self.num_eyes=2
+
+    def breath(self):
+        print(self.name+"在呼吸...")
+    
+    def eat(self):
+        print(self.name+"在吃飯...")
+
+class Human(Mammal):
+    def __init__(self, name, sex):
+        super().__init__(name,sex)  #super會調用父類構造函數
+        self.has_tail=False
+
+    def read(self):
+        print(self.name+"在閱讀...")
+    
+class Cat(Mammal):
+    def __init__(self, name, sex):
+        super().__init__(name,sex)  #super會調用父類構造函數
+        self.has_tail=True
+
+    def scratch_sofa(self):
+        print(self.name+"在抓沙發...")
+
+
+#類繼承練習:人力系統
+#-員工分為兩類:全職員工 fulltimeemployee,兼職員工,PartTimeEmployee。
+#-全職和兼職都有姓名、工號
+#-都具備打印訊息print_info(列印姓名、工號)方法
+#-全職有"月薪 monthly_salary 屬性
+#-兼職有"日薪 daily_salary 屬性、每月工作天數 work_dayts屬性
+#-全職和兼職都有"計算月薪 calculate_monthly_pay 的方法，但具體計算過程不同
+
+class Employee:
+    def __init__(self,name,id):
+        self.name=name
+        self.id=id
+    
+    def print_info(self):
+        print(f"員工姓名:{self.name},工號{self.id}")
+
+class FullTimeEmployee(Employee):
+    def __init__(self, name, id, monthly_salary):
+        super().__init__(name, id)
+        self.monthly_salary=monthly_salary
+
+    def calculate_monthly_pay(self):
+        return self.monthly_salary
+
+class PartTimeEmployee(Employee):
+    def __init__(self, name, id, daily_salary, work_days):
+        super().__init__(name, id)
+        self.daily_salary=daily_salary
+        self.work_days=work_days
+
+    def calculate_monthly_pay(self):
+        return self.daily_salary*self.work_days
+
+Zhangsan=FullTimeEmployee("張三","1001",6000)
+Lisi=PartTimeEmployee("李四","1002",200,20)
+Zhangsan.print_info()
+print(Zhangsan.calculate_monthly_pay())
+Lisi.print_info()
+print(Lisi.calculate_monthly_pay())
+
+#操作檔案文件，讀取
+f=open("Python考題\data.txt","r",encoding="utf-8")
+# f=open("./Python考題/data.txt","r",encoding="utf-8")
+
+# 讀取三種方式: read=返回全部文件內容的字符串, readline=返回一行文件內容的字符串, readlines=返回全部文件內容組成的"列表" 
+
+# print(f.read()) #會讀取全部文件內容，並印出
+# print(f.read()) #第二次打印會印出空白
+
+# print(f.read(10)) #會讀取1-10文件內容，並印出
+
+# print(f.readline()) #會讀一行文件內容，並印出
+
+print(f.readlines()) #會讀全部文件內容，並把每行當作元素返回
+
+f.close() #關閉文件，釋放資源
+
+#如果不想開啟又關閉，可以用以下代碼
+with open("Python考題\data.txt","r",encoding="utf-8") as f:
+    print(f.read())
+
+#with 結束後文件資源自動關閉
+
+#練習題
+print("----------------------------------------------------")
+# content=(f.read("Python考題\data2.txt","r",encoding="utf-8"))
+# print(content)
+
+with open("Python考題\data2.txt","r",encoding="utf-8") as f:
+    content=(f.read())
+    print(content)
+
+with open("Python考題\data2.txt","r",encoding="utf-8") as f:
+    content=(f.readline())
+    print(content)
+
+with open("Python考題\data2.txt","r",encoding="utf-8") as f:
+    content=(f.readlines())
+    print(content)
+    for line in content:
+        print(line)
