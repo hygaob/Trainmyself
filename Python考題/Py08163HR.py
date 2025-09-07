@@ -418,3 +418,51 @@ with open("Python考題\data2.txt","r",encoding="utf-8") as f:
     print(content)
     for line in content:
         print(line)
+
+#操作檔案，寫入
+with open("Python考題\log.txt","w",encoding="utf-8") as f:   #不須根據文件是否存在，如果不存在會創建一個文件
+    f.write("Hello!\n")    #"w"會把原本內容清空，請確保內容可以修改!!
+    f.write("Yoooo")
+
+with open("Python考題\log2.txt","a",encoding="utf-8") as f:   #不須根據文件是否存在，如果不存在會創建一個文件
+    f.write("Hello!\n")     #"a"不會把原本內容清空，可以接續新增!!
+    f.write("Yoooo\n")    
+
+with open("Python考題\log2.txt","r+",encoding="utf-8") as f:   #不須根據文件是否存在，如果不存在會創建一個文件
+    print(f.read())
+    f.write("Hello!\n")     #"r+"可以同時支持讀寫!!
+    f.write("Yoooo\n")
+
+import datetime
+
+with open("Python考題\log3.txt","r+",encoding="utf-8") as f:   #不須根據文件是否存在，如果不存在會創建一個文件
+    print(f.read())   #先read可以保持原內容
+    f.write(str(datetime.datetime.now().time())+"\n")
+
+#異常處理
+#終端機=*Error
+
+#捕捉異常
+# try:
+#     program...
+# except ValueError:  #當數值錯誤
+#     當錯誤時處理...
+# except ZeroDivisionError:  #當零除法錯誤
+#     當錯誤時處理...
+# except:     #當出現錯誤
+#     當錯誤時處理...
+# else:
+#     當沒錯時處理...
+# finally:
+#     當程式處理完後...不管錯誤與否都會執行
+
+# Point:except為順序處裡
+
+# Bug & Test
+# assert 邏輯   #如果True 則繼續執行  如果False 則輸出 AssertionError 終止執行
+# 可以用 unittest 庫
+# 用新的檔案來練習
+
+#Lambda 匿名函數，適合一次調用，或簡單瀋少用函式
+
+    
