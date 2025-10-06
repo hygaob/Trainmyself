@@ -27,3 +27,4 @@ for idx, profit in enumerate(profits, 1):
     print(f"第{idx}月，投資帳戶餘額：{round(profit, 2)}")
 print(f"\n{invest_years}年後總獲利：{round(profits[-1], 2)}")
 print(f"月繳金額為:{round(A, 2)}")
+
